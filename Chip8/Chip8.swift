@@ -47,7 +47,7 @@ public class Chip8 {
     // Number of keys
     var keys = [UInt8](repeating: 0, count: 16)
 
-    private var shouldDraw = false
+    var shouldDraw = false
 
     private var lastOpcode: UInt16?
 

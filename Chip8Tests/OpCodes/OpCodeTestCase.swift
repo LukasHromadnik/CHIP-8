@@ -29,16 +29,43 @@ class OpCodeTestCase: XCTestCase {
 
     // MARK: - Public API
 
-    func generateRandomRegisters() -> (Int, Int) {
-        let firstIndex: Int = .random(in: 0..<15)
+    func generateTwoDifferentRandom<R, T>(in range: R, ofType: T.Type = T.self) -> (T, T) where R: RangeExpression, R.Bound == T, T: Randomizable {
+        let firstIndex: T = .random(in: range)
         while true {
-            let secondIndex: Int = .random(in: 0..<15)
+            let secondIndex: T = .random(in: range)
             if secondIndex != firstIndex {
                 return (firstIndex, secondIndex)
             }
         }
 
         assertionFailure("Unable to create two different indexes")
-        return (0, 0)
+        return (.zero, .zero)
+    }
+
+    func generateRandomRegisters() -> (Int, Int) {
+        generateTwoDifferentRandom(in: 0..<15)
     }
 }
+
+protocol Randomizable: Comparable {
+    static var zero: Self { get }
+    static func random(in range: Range<Self>) -> Self
+    static func random(in range: ClosedRange<Self>) -> Self
+}
+
+extension Randomizable {
+    static func random<R>(in range: R) -> Self where R: RangeExpression, R.Bound == Self {
+        if let range = range as? Range<Self> {
+            return random(in: range)
+        } else if let range = range as? ClosedRange<Self> {
+            return random(in: range)
+        }
+
+        assertionFailure("Undefined Range")
+        return .zero
+    }
+}
+
+extension Int: Randomizable { }
+extension UInt8: Randomizable { }
+extension UInt16: Randomizable { }
