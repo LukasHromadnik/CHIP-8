@@ -70,12 +70,15 @@ public class Chip8 {
     private var lastOpcode: UInt16?
 
     var randomizer: RandomizerProtocol = Randomizer()
+    private let rom: String
 
-    public init() { }
+    public init(rom: String) {
+        self.rom = rom
+    }
 
     public func run() {
         setup()
-        loadROM("MAZE")
+        loadROM(rom)
 
         DispatchQueue(label: "emulator").async {
             while true {
@@ -118,10 +121,10 @@ public class Chip8 {
     }
 
     func decodeOpcode() {
-        if lastOpcode == opcode {
-            assertionFailure("Possible recursion")
-            return
-        }
+//        if lastOpcode == opcode {
+//            assertionFailure("Possible recursion")
+//            return
+//        }
         lastOpcode = opcode
         switch opcode & 0xF000 {
         case 0x0000:
@@ -129,9 +132,7 @@ public class Chip8 {
             case 0x00E0:
                 // 00E0
                 // Clears the screen.
-                for i in 0..<display.count {
-                    display[i] = 0
-                }
+                clearDisplay()
                 shouldDraw = true
                 pc += 2
 
@@ -305,7 +306,6 @@ public class Chip8 {
             let x = Int(opcode & 0x0F00) >> 8
             let y = Int(opcode & 0x00F0) >> 4
             let height = Int(opcode & 0x000F)
-            vf = 0
 
             draw(x: v[x], y: v[y], height: height)
 
@@ -416,19 +416,27 @@ public class Chip8 {
         }
     }
 
+    func clearDisplay() {
+        for i in 0..<display.count {
+            display[i] = 0
+        }
+    }
+
     /// Each row of 8 pixels is read as bit-coded starting from memory location I;
     func draw(x: UInt8, y: UInt8, height: Int) {
+        vf = 0
         let x = Int(x)
         let y = Int(y)
         for row in 0..<height {
+            let pixels = memory[Int(vI) + row]
             for col in 0..<kSpriteLength {
-                let pixel = memory[Int(vI) + row * kSpriteLength + col]
+                guard pixels & (0x80 >> col) != 0 else { continue }
                 let displayIndex = (row + y) * kDisplayWidth + col + x
-                if display[displayIndex] == 1 && pixel == 0 {
+                if display[displayIndex] == 1 {
                     vf = 1
                 }
 
-                display[displayIndex] = pixel > 0 ? 1 : 0
+                display[displayIndex] ^= 1
             }
         }
     }
@@ -448,7 +456,6 @@ public class Chip8 {
     }
 
     private func updateCanvas() {
-        print(#function)
         shouldDraw = false
         DispatchQueue.main.async { [unowned self] in
             self.onDisplayUpdate?(self.display)

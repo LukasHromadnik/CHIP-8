@@ -17,7 +17,7 @@ class Chip8TestCase: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        chip8 = .init()
+        chip8 = .init(rom: "")
         chip8.pc = 0
     }
 
