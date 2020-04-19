@@ -96,9 +96,7 @@ public class Chip8 {
     }
 
     private func setup() {
-        for i in 0..<Chip8.fontSet.count {
-            memory[0x50 + i * 8] = Chip8.fontSet[i]
-        }
+        memory.replaceSubrange(kFontSetCounter..<kFontSetCounter + Chip8.fontSet.count, with: Chip8.fontSet)
     }
 
     private func loadROM(_ name: String) {
@@ -376,7 +374,7 @@ public class Chip8 {
                 // Sets I to the location of the sprite for the character in VX. Characters 0-F (in hexadecimal) are represented by a 4x5 font.
                 let x = Int(opcode & 0x0F00) >> 8
                 let letter = Int(v[x])
-                vI = UInt16(kFontSetCounter + letter * 5 * 8)
+                vI = UInt16(kFontSetCounter + letter * 5)
 
             case 0xF033:
                 // FX33

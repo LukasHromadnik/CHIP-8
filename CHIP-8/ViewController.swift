@@ -102,7 +102,7 @@ class ViewController: UIViewController {
             pixelView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
-        let rom: Rom = .test
+        let rom: Rom = .puzzle
         let chip8 = Chip8(rom: rom.rawValue)
         chip8.onDisplayUpdate = { display in
             for i in 0..<display.count {
