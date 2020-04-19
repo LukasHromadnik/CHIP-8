@@ -25,6 +25,7 @@
 		A3D6BD422448D8EB00579B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D6BD402448D8EB00579B97 /* Main.storyboard */; };
 		A3D6BD442448D8EE00579B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D6BD432448D8EE00579B97 /* Assets.xcassets */; };
 		A3D6BD472448D8EE00579B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D6BD452448D8EE00579B97 /* LaunchScreen.storyboard */; };
+		A3D8229A244C19DA00743780 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D82299244C19DA00743780 /* Draw.swift */; };
 		A3D91FDE244ADCD100913378 /* 8XY0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FDD244ADCD100913378 /* 8XY0.swift */; };
 		A3D91FE0244ADCD700913378 /* 8XY1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FDF244ADCD700913378 /* 8XY1.swift */; };
 		A3D91FE2244ADCE100913378 /* 8XY2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FE1244ADCE100913378 /* 8XY2.swift */; };
@@ -34,8 +35,7 @@
 		A3D91FEA244ADCF700913378 /* 8XY6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FE9244ADCF700913378 /* 8XY6.swift */; };
 		A3D91FEC244ADCFC00913378 /* 8XY7.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FEB244ADCFC00913378 /* 8XY7.swift */; };
 		A3D91FEE244ADD0100913378 /* 8XYE.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FED244ADD0100913378 /* 8XYE.swift */; };
-		A3D91FF1244ADD1900913378 /* UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FF0244ADD1900913378 /* UInt8.swift */; };
-		A3D91FF3244ADD4200913378 /* OpCodeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FF2244ADD4200913378 /* OpCodeTestCase.swift */; };
+		A3D91FF3244ADD4200913378 /* Chip8TestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FF2244ADD4200913378 /* Chip8TestCase.swift */; };
 		A3D91FF7244B06FF00913378 /* 00E0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FF6244B06FF00913378 /* 00E0.swift */; };
 		A3D91FF9244B07A300913378 /* 00EE.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FF8244B07A300913378 /* 00EE.swift */; };
 		A3D91FFC244B095A00913378 /* 1NNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FFB244B095A00913378 /* 1NNN.swift */; };
@@ -45,6 +45,14 @@
 		A3D92008244B1A2200913378 /* 5XY0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D92007244B1A2200913378 /* 5XY0.swift */; };
 		A3D9200B244B4E8D00913378 /* 6XNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9200A244B4E8D00913378 /* 6XNN.swift */; };
 		A3D9200D244B4F3900913378 /* 7XNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9200C244B4F3900913378 /* 7XNN.swift */; };
+		A3D9200F244B508A00913378 /* 9XY0.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9200E244B508A00913378 /* 9XY0.swift */; };
+		A3D92011244B516000913378 /* ANNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D92010244B516000913378 /* ANNN.swift */; };
+		A3D92013244B528500913378 /* BNNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D92012244B528500913378 /* BNNN.swift */; };
+		A3D92015244B52CF00913378 /* CXNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D92014244B52CF00913378 /* CXNN.swift */; };
+		A3D92019244B635100913378 /* Randomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D92016244B62B200913378 /* Randomizable.swift */; };
+		A3D9201B244C159800913378 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201A244C159800913378 /* UInt16.swift */; };
+		A3D9201E244C15C300913378 /* RandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201D244C15C300913378 /* RandomizerMock.swift */; };
+		A3D92020244C167300913378 /* UInt16Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201F244C167300913378 /* UInt16Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +115,7 @@
 		A3D6BD462448D8EE00579B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D6BD482448D8EE00579B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D6BD4E2448D90500579B97 /* Chip8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8.swift; sourceTree = "<group>"; };
+		A3D82299244C19DA00743780 /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		A3D91FDD244ADCD100913378 /* 8XY0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XY0.swift; sourceTree = "<group>"; };
 		A3D91FDF244ADCD700913378 /* 8XY1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XY1.swift; sourceTree = "<group>"; };
 		A3D91FE1244ADCE100913378 /* 8XY2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XY2.swift; sourceTree = "<group>"; };
@@ -116,8 +125,7 @@
 		A3D91FE9244ADCF700913378 /* 8XY6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XY6.swift; sourceTree = "<group>"; };
 		A3D91FEB244ADCFC00913378 /* 8XY7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XY7.swift; sourceTree = "<group>"; };
 		A3D91FED244ADD0100913378 /* 8XYE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 8XYE.swift; sourceTree = "<group>"; };
-		A3D91FF0244ADD1900913378 /* UInt8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt8.swift; sourceTree = "<group>"; };
-		A3D91FF2244ADD4200913378 /* OpCodeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpCodeTestCase.swift; sourceTree = "<group>"; };
+		A3D91FF2244ADD4200913378 /* Chip8TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8TestCase.swift; sourceTree = "<group>"; };
 		A3D91FF6244B06FF00913378 /* 00E0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 00E0.swift; sourceTree = "<group>"; };
 		A3D91FF8244B07A300913378 /* 00EE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 00EE.swift; sourceTree = "<group>"; };
 		A3D91FFB244B095A00913378 /* 1NNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1NNN.swift; sourceTree = "<group>"; };
@@ -127,6 +135,14 @@
 		A3D92007244B1A2200913378 /* 5XY0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 5XY0.swift; sourceTree = "<group>"; };
 		A3D9200A244B4E8D00913378 /* 6XNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 6XNN.swift; sourceTree = "<group>"; };
 		A3D9200C244B4F3900913378 /* 7XNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7XNN.swift; sourceTree = "<group>"; };
+		A3D9200E244B508A00913378 /* 9XY0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9XY0.swift; sourceTree = "<group>"; };
+		A3D92010244B516000913378 /* ANNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANNN.swift; sourceTree = "<group>"; };
+		A3D92012244B528500913378 /* BNNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNNN.swift; sourceTree = "<group>"; };
+		A3D92014244B52CF00913378 /* CXNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXNN.swift; sourceTree = "<group>"; };
+		A3D92016244B62B200913378 /* Randomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizable.swift; sourceTree = "<group>"; };
+		A3D9201A244C159800913378 /* UInt16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16.swift; sourceTree = "<group>"; };
+		A3D9201D244C15C300913378 /* RandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerMock.swift; sourceTree = "<group>"; };
+		A3D9201F244C167300913378 /* UInt16Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +178,7 @@
 				A3832BE2244A312300FEDA28 /* Chip8.h */,
 				A3832BE3244A312300FEDA28 /* Info.plist */,
 				A3D6BD4E2448D90500579B97 /* Chip8.swift */,
+				A3D92016244B62B200913378 /* Randomizable.swift */,
 			);
 			path = Chip8;
 			sourceTree = "<group>";
@@ -169,8 +186,12 @@
 		A3832BEE244A312300FEDA28 /* Chip8Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A3D91FEF244ADD0F00913378 /* Extensions */,
+				A3D91FF2244ADD4200913378 /* Chip8TestCase.swift */,
+				A3D82299244C19DA00743780 /* Draw.swift */,
+				A3D9201F244C167300913378 /* UInt16Tests.swift */,
 				A3832C01244A31C300FEDA28 /* OpCodes */,
+				A3D91FEF244ADD0F00913378 /* Extensions */,
+				A3D9201C244C15BC00913378 /* Mocks */,
 				A3832BF1244A312300FEDA28 /* Info.plist */,
 			);
 			path = Chip8Tests;
@@ -179,7 +200,6 @@
 		A3832C01244A31C300FEDA28 /* OpCodes */ = {
 			isa = PBXGroup;
 			children = (
-				A3D91FF2244ADD4200913378 /* OpCodeTestCase.swift */,
 				A3D91FF6244B06FF00913378 /* 00E0.swift */,
 				A3D91FF8244B07A300913378 /* 00EE.swift */,
 				A3D91FFB244B095A00913378 /* 1NNN.swift */,
@@ -198,6 +218,10 @@
 				A3D91FE9244ADCF700913378 /* 8XY6.swift */,
 				A3D91FEB244ADCFC00913378 /* 8XY7.swift */,
 				A3D91FED244ADD0100913378 /* 8XYE.swift */,
+				A3D9200E244B508A00913378 /* 9XY0.swift */,
+				A3D92010244B516000913378 /* ANNN.swift */,
+				A3D92012244B528500913378 /* BNNN.swift */,
+				A3D92014244B52CF00913378 /* CXNN.swift */,
 			);
 			path = OpCodes;
 			sourceTree = "<group>";
@@ -254,9 +278,17 @@
 		A3D91FEF244ADD0F00913378 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A3D91FF0244ADD1900913378 /* UInt8.swift */,
+				A3D9201A244C159800913378 /* UInt16.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3D9201C244C15BC00913378 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A3D9201D244C15C300913378 /* RandomizerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3832BFE244A312C00FEDA28 /* Chip8.swift in Sources */,
+				A3D92019244B635100913378 /* Randomizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,12 +452,17 @@
 			files = (
 				A3D9200D244B4F3900913378 /* 7XNN.swift in Sources */,
 				A3D91FE2244ADCE100913378 /* 8XY2.swift in Sources */,
+				A3D92015244B52CF00913378 /* CXNN.swift in Sources */,
 				A3D92008244B1A2200913378 /* 5XY0.swift in Sources */,
 				A3D91FDE244ADCD100913378 /* 8XY0.swift in Sources */,
 				A3D91FFC244B095A00913378 /* 1NNN.swift in Sources */,
 				A3D91FF7244B06FF00913378 /* 00E0.swift in Sources */,
+				A3D92011244B516000913378 /* ANNN.swift in Sources */,
 				A3D91FFF244B16AA00913378 /* 2NNN.swift in Sources */,
+				A3D92013244B528500913378 /* BNNN.swift in Sources */,
 				A3D91FE0244ADCD700913378 /* 8XY1.swift in Sources */,
+				A3D92020244C167300913378 /* UInt16Tests.swift in Sources */,
+				A3D8229A244C19DA00743780 /* Draw.swift in Sources */,
 				A3D91FEC244ADCFC00913378 /* 8XY7.swift in Sources */,
 				A3D91FEA244ADCF700913378 /* 8XY6.swift in Sources */,
 				A3D91FF9244B07A300913378 /* 00EE.swift in Sources */,
@@ -432,11 +470,13 @@
 				A3D91FE4244ADCE700913378 /* 8XY3.swift in Sources */,
 				A3D91FE8244ADCF200913378 /* 8XY5.swift in Sources */,
 				A3D92002244B17DD00913378 /* 3XNN.swift in Sources */,
-				A3D91FF3244ADD4200913378 /* OpCodeTestCase.swift in Sources */,
+				A3D9201E244C15C300913378 /* RandomizerMock.swift in Sources */,
+				A3D91FF3244ADD4200913378 /* Chip8TestCase.swift in Sources */,
 				A3D9200B244B4E8D00913378 /* 6XNN.swift in Sources */,
+				A3D9201B244C159800913378 /* UInt16.swift in Sources */,
 				A3D91FEE244ADD0100913378 /* 8XYE.swift in Sources */,
 				A3D92005244B19CA00913378 /* 4XNN.swift in Sources */,
-				A3D91FF1244ADD1900913378 /* UInt8.swift in Sources */,
+				A3D9200F244B508A00913378 /* 9XY0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

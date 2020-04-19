@@ -9,10 +9,13 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode00E0Tests: OpCodeTestCase {
+final class OpCode00E0Tests: Chip8TestCase {
     func testCode() {
-        chip8.opcode = 0x00E0
+        for i in 0..<chip8.display.count {
+            chip8.display[i] = .random()
+        }
 
+        chip8.opcode = 0x00E0
         chip8.decodeOpcode()
 
         XCTAssertEqual(chip8.display.reduce(0, +), 0)

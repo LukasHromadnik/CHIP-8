@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode2NNNTests: OpCodeTestCase {
+final class OpCode2NNNTests: Chip8TestCase {
     func testRandom() {
         let randomAddressBefore: UInt16 = .random(in: 0...0xFFF)
         let randomAddressAfter: UInt16 = .random(in: 0...0xFFF)

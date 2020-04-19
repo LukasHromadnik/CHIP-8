@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode3NNNTests: OpCodeTestCase {
+final class OpCode3NNNTests: Chip8TestCase {
     func testRandom() {
         let (x, _) = generateRandomRegisters()
         let value: UInt8 = .random()
@@ -37,19 +37,9 @@ final class OpCode3NNNTests: OpCodeTestCase {
     func testNoSkip() {
         let (x, _) = generateRandomRegisters()
         let (valueX, valueY) = generateTwoDifferentRandom(in: 0...0xFF, ofType: UInt8.self)
-        let value: UInt8 = .random()
-        var addressValue: UInt8 = 0
-        while true {
-            let secondValue: UInt8 = .random()
-            if secondValue == value {
-                continue
-            }
-            addressValue = secondValue
-            break
-        }
 
-        chip8.v[x] = value
-        chip8.opcode = 0x3000 | UInt16(x) << 8 | UInt16(addressValue)
+        chip8.v[x] = valueX
+        chip8.opcode = 0x3000 | UInt16(x) << 8 | UInt16(valueY)
         chip8.decodeOpcode()
 
         XCTAssertEqual(chip8.pc, 2)

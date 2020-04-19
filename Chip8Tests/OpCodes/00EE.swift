@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode00EETests: OpCodeTestCase {
+final class OpCode00EETests: Chip8TestCase {
     func testCode() {
         let randomPC: Int = .random(in: 0..<chip8.memory.count)
         let randomSP: Int = .random(in: 0..<chip8.stack.count)

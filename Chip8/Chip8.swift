@@ -8,9 +8,28 @@
 
 import Foundation
 
+protocol RandomizerProtocol {
+    func random<R, T>(in range: R, ofType type: T.Type) -> T where R: RangeExpression, R.Bound == T, T: Randomizable
+}
+
+extension RandomizerProtocol {
+    func random<R, T>(in range: R) -> T where R: RangeExpression, R.Bound == T, T: Randomizable
+    {
+        random(in: range, ofType: T.self)
+    }
+}
+
+public class Randomizer: RandomizerProtocol {
+   func random<R, T>(in range: R, ofType type: T.Type) -> T where R: RangeExpression, R.Bound == T, T: Randomizable {
+        T.random(in: range)
+    }
+}
+
 let kSpriteLength = 8
 let kInitProgramCounter: Data.Index = 0x200
 let kFontSetCounter: Data.Index = 0x50
+let kDisplayWidth = 64
+let kDisplayHeight = 32
 
 public class Chip8 {
     /// Memory, size 4 096 bytes
@@ -38,8 +57,7 @@ public class Chip8 {
     var delayTimer = 0
     var soundTimer = 0
 
-    // Resolution is 64 * 32
-    var display = [UInt8](repeating: 0, count: 64 * 32)
+    var display = [UInt8](repeating: 0, count: kDisplayWidth * kDisplayHeight)
     public var onDisplayUpdate: (([UInt8]) -> Void)?
 
     var opcode: UInt16 = 0
@@ -51,11 +69,13 @@ public class Chip8 {
 
     private var lastOpcode: UInt16?
 
+    var randomizer: RandomizerProtocol = Randomizer()
+
     public init() { }
 
     public func run() {
         setup()
-        loadROM("PUZZLE")
+        loadROM("MAZE")
 
         DispatchQueue(label: "emulator").async {
             while true {
@@ -67,7 +87,7 @@ public class Chip8 {
 
                 self.loadKeys()
 
-                usleep(100000)
+                usleep(10000)
             }
         }
     }
@@ -270,7 +290,7 @@ public class Chip8 {
             // CXNN
             // Sets VX to the result of a bitwise and operation on a random number (Typically: 0 to 255) and NN.
             let x = Int(opcode & 0x0F00) >> 8
-            let rand = UInt8.random(in: 0...255)
+            let rand: UInt8 = randomizer.random(in: 0...255)
             let mask = UInt8(opcode & 0x00FF)
             v[x] = rand & mask
             pc += 2
@@ -287,17 +307,8 @@ public class Chip8 {
             let height = Int(opcode & 0x000F)
             vf = 0
 
-            for row in 0..<height {
-//                for col in 0..<kSpriteLength {
-//                    let pixel = memory[Int(vI) + row] & UInt8(0x80 >> col) >> (kSpriteLength - col)
-//                    let index = (row + Int(v[x])) * 64 + col * Int(v[y])
-//                    if index >= display.count { continue }
-//                    if display[index] == 1 && pixel == 0 {
-//                        vf = 1
-//                    }
-//                    display[index] = pixel
-//                }
-            }
+            draw(x: v[x], y: v[y], height: height)
+
             shouldDraw = true
             pc += 2
 
@@ -405,6 +416,23 @@ public class Chip8 {
         }
     }
 
+    /// Each row of 8 pixels is read as bit-coded starting from memory location I;
+    func draw(x: UInt8, y: UInt8, height: Int) {
+        let x = Int(x)
+        let y = Int(y)
+        for row in 0..<height {
+            for col in 0..<kSpriteLength {
+                let pixel = memory[Int(vI) + row * kSpriteLength + col]
+                let displayIndex = (row + y) * kDisplayWidth + col + x
+                if display[displayIndex] == 1 && pixel == 0 {
+                    vf = 1
+                }
+
+                display[displayIndex] = pixel > 0 ? 1 : 0
+            }
+        }
+    }
+
     private func updateTimers() {
         if delayTimer > 0 {
             delayTimer -= 1
@@ -420,15 +448,10 @@ public class Chip8 {
     }
 
     private func updateCanvas() {
+        print(#function)
         shouldDraw = false
-//        for i in 0..<32 {
-//            for j in 0..<64 {
-//                let pixel = display[j + i * 32]
-//                let letter = pixel == 1 ? "X" : " "
-//            }
-//        }
-        DispatchQueue.main.async { [weak self] in
-            self?.onDisplayUpdate?(self!.display)
+        DispatchQueue.main.async { [unowned self] in
+            self.onDisplayUpdate?(self.display)
         }
     }
 

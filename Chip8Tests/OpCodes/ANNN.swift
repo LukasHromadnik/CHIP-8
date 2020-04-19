@@ -1,5 +1,5 @@
 //
-//  1NNN.swift
+//  ANNN.swift
 //  Chip8Tests
 //
 //  Created by Lukáš Hromadník on 18/04/2020.
@@ -9,13 +9,14 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode1NNNTests: Chip8TestCase {
+final class OpCodeANNNTests: Chip8TestCase {
     func testRandom() {
-        let randomAddress: UInt16 = .random(in: 0..<0xFFF)
+        let value: UInt16 = .random(in: 0...0xFFF)
 
-        chip8.opcode = 0x1000 | randomAddress
+        chip8.opcode = 0xA000 | value
         chip8.decodeOpcode()
 
-        XCTAssertEqual(chip8.pc, Int(randomAddress))
+        XCTAssertEqual(chip8.vI, value)
+        XCTAssertEqual(chip8.pc, 2)
     }
 }

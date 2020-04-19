@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode8XY0Tests: OpCodeTestCase {
+final class OpCode8XY0Tests: Chip8TestCase {
     func testRandom() {
         let (x, y) = generateRandomRegisters()
         let valueX: UInt8 = .random()

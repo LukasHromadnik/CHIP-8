@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-final class OpCode8XY7Tests: OpCodeTestCase {
+final class OpCode8XY7Tests: Chip8TestCase {
     func testNoOveflow() {
         let (x, y) = generateRandomRegisters()
         let valueX: UInt8 = 2

@@ -9,7 +9,7 @@
 import XCTest
 @testable import Chip8
 
-class OpCodeTestCase: XCTestCase {
+class Chip8TestCase: XCTestCase {
     var chip8: Chip8!
 
     // MARK: - Lifecycle
@@ -46,26 +46,3 @@ class OpCodeTestCase: XCTestCase {
         generateTwoDifferentRandom(in: 0..<15)
     }
 }
-
-protocol Randomizable: Comparable {
-    static var zero: Self { get }
-    static func random(in range: Range<Self>) -> Self
-    static func random(in range: ClosedRange<Self>) -> Self
-}
-
-extension Randomizable {
-    static func random<R>(in range: R) -> Self where R: RangeExpression, R.Bound == Self {
-        if let range = range as? Range<Self> {
-            return random(in: range)
-        } else if let range = range as? ClosedRange<Self> {
-            return random(in: range)
-        }
-
-        assertionFailure("Undefined Range")
-        return .zero
-    }
-}
-
-extension Int: Randomizable { }
-extension UInt8: Randomizable { }
-extension UInt16: Randomizable { }
