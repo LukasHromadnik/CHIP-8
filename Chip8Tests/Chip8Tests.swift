@@ -18,4 +18,24 @@ final class Chip8Test: Chip8TestCase {
             XCTAssertEqual(chip8.memory[fontSetCounter + i], fontSet[i])
         }
     }
+
+    func testKeyPress() {
+        chip8.keyboard = 0
+        let keyIndex: Int = .random(in: 0..<16)
+
+        chip8.press(keyIndex)
+
+        let keyBit: UInt16 = 1 << keyIndex
+        XCTAssertEqual(chip8.keyboard, keyBit)
+    }
+
+    func testKeyRelease() {
+        chip8.keyboard = 0xFFFF
+        let keyIndex: Int = .random(in: 0..<16)
+
+        chip8.release(keyIndex)
+
+        let keyBit: UInt16 = 1 << keyIndex
+        XCTAssertEqual(chip8.keyboard & keyBit, 0)
+    }
 }

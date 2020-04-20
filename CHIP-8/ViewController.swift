@@ -9,7 +9,7 @@
 import UIKit
 import Chip8
 
-let kSelectedRom: Rom = .puzzle
+let kSelectedRom: Rom = .test
 
 class KeyButton: UIButton {
     override var bounds: CGRect {

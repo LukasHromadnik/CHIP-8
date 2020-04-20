@@ -460,6 +460,8 @@ public class Chip8 {
         for row in 0..<height {
             let pixels = memory[Int(vI) + row]
             for col in 0..<kSpriteLength {
+                guard row + y < kDisplayHeight else { continue }
+                guard col + x < kDisplayWidth else { continue }
                 guard pixels & (0x80 >> col) != 0 else { continue }
                 let displayIndex = (row + y) * kDisplayWidth + col + x
                 if display[displayIndex] == 1 {

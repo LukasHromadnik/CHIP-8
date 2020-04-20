@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3770FF3244E09D500C1379A /* DXYN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF2244E09D500C1379A /* DXYN.swift */; };
 		A3832BDA244A1A0300FEDA28 /* test.c8 in Resources */ = {isa = PBXBuildFile; fileRef = A3832BD9244A1A0300FEDA28 /* test.c8 */; };
 		A3832BE9244A312300FEDA28 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; };
 		A3832BF2244A312300FEDA28 /* Chip8.h in Headers */ = {isa = PBXBuildFile; fileRef = A3832BE2244A312300FEDA28 /* Chip8.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,6 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A3770FF2244E09D500C1379A /* DXYN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXYN.swift; sourceTree = "<group>"; };
 		A3832BD9244A1A0300FEDA28 /* test.c8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.c8; sourceTree = "<group>"; };
 		A3832BE0244A312300FEDA28 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3832BE2244A312300FEDA28 /* Chip8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chip8.h; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				A3D92010244B516000913378 /* ANNN.swift */,
 				A3D92012244B528500913378 /* BNNN.swift */,
 				A3D92014244B52CF00913378 /* CXNN.swift */,
+				A3770FF2244E09D500C1379A /* DXYN.swift */,
 				A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */,
 			);
 			path = OpCodes;
@@ -462,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3770FF3244E09D500C1379A /* DXYN.swift in Sources */,
 				A3D9200D244B4F3900913378 /* 7XNN.swift in Sources */,
 				A3D91FE2244ADCE100913378 /* 8XY2.swift in Sources */,
 				A3D92015244B52CF00913378 /* CXNN.swift in Sources */,
