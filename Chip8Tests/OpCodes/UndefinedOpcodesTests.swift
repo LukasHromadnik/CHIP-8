@@ -32,16 +32,13 @@ final class UndefinedOpcodesTests: Chip8TestCase {
         var opcode: UInt16 = createOpcode()
         let definedOpcodes: [UInt16] = [0x00E0, 0x00EE]
 
-        var counter = 0
-        while counter < 100 {
+        for _ in 0..<100 {
             while definedOpcodes.contains(opcode) {
                 opcode = createOpcode()
             }
 
             chip8.opcode = opcode
             XCTAssertThrows(try chip8.decodeOpcode(), Chip8Error.notImplemented(opcode))
-
-            counter += 1
 
             opcode = createOpcode()
         }
@@ -100,16 +97,13 @@ final class UndefinedOpcodesTests: Chip8TestCase {
         var opcode: UInt16 = createOpcode()
         let definedOpcodes: [UInt16] = [0xE09E, 0xE0A1]
 
-        var counter = 0
-        while counter < 100 {
+        for _ in 0..<100 {
             while definedOpcodes.contains(opcode & 0xF0FF) {
                 opcode = createOpcode()
             }
 
             chip8.opcode = opcode
             XCTAssertThrows(try chip8.decodeOpcode(), Chip8Error.undefinedOpcode(opcode))
-
-            counter += 1
 
             opcode = createOpcode()
         }
@@ -120,16 +114,13 @@ final class UndefinedOpcodesTests: Chip8TestCase {
         var opcode: UInt16 = createOpcode()
         let definedOpcodes: [UInt16] = [0xF007, 0xF00A, 0xF015, 0xF018, 0xF01E, 0xF029, 0xF033, 0xF055, 0xF065]
 
-        var counter = 0
-        while counter < 100 {
+        for _ in 0..<100 {
             while definedOpcodes.contains(opcode & 0xF0FF) {
                 opcode = createOpcode()
             }
             
             chip8.opcode = opcode
             XCTAssertThrows(try chip8.decodeOpcode(), Chip8Error.undefinedOpcode(opcode))
-            
-            counter += 1
             
             opcode = createOpcode()
         }
