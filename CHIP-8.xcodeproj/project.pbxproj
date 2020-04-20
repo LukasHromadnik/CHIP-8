@@ -53,6 +53,8 @@
 		A3D9201B244C159800913378 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201A244C159800913378 /* UInt16.swift */; };
 		A3D9201E244C15C300913378 /* RandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201D244C15C300913378 /* RandomizerMock.swift */; };
 		A3D92020244C167300913378 /* UInt16Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201F244C167300913378 /* UInt16Tests.swift */; };
+		A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C6244D65A000203B07 /* PixelView.swift */; };
+		A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C8244D65BF00203B07 /* Rom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		A3D9201A244C159800913378 /* UInt16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16.swift; sourceTree = "<group>"; };
 		A3D9201D244C15C300913378 /* RandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerMock.swift; sourceTree = "<group>"; };
 		A3D9201F244C167300913378 /* UInt16Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16Tests.swift; sourceTree = "<group>"; };
+		A3FB15C6244D65A000203B07 /* PixelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelView.swift; sourceTree = "<group>"; };
+		A3FB15C8244D65BF00203B07 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,8 @@
 				A3D6BD3A2448D8EB00579B97 /* AppDelegate.swift */,
 				A3D6BD3C2448D8EB00579B97 /* SceneDelegate.swift */,
 				A3D6BD3E2448D8EB00579B97 /* ViewController.swift */,
+				A3FB15C8244D65BF00203B07 /* Rom.swift */,
+				A3FB15C6244D65A000203B07 /* PixelView.swift */,
 				A3D6BD402448D8EB00579B97 /* Main.storyboard */,
 				A3D6BD432448D8EE00579B97 /* Assets.xcassets */,
 				A3D6BD452448D8EE00579B97 /* LaunchScreen.storyboard */,
@@ -487,6 +493,8 @@
 				A3832C00244A316800FEDA28 /* ViewController.swift in Sources */,
 				A3D6BD3B2448D8EB00579B97 /* AppDelegate.swift in Sources */,
 				A3D6BD3D2448D8EB00579B97 /* SceneDelegate.swift in Sources */,
+				A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */,
+				A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
