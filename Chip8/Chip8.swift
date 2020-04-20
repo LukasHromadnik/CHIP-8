@@ -80,8 +80,7 @@ public class Chip8 {
 
     var opcode: UInt16 = 0
 
-    // Number of keys
-    var keys = [UInt8](repeating: 0, count: 16)
+    var keyboard: UInt16 = 0
 
     var shouldDraw = false
 
@@ -99,7 +98,9 @@ public class Chip8 {
     public func run() {
         loadROM(rom)
 
-        DispatchQueue(label: "emulator").async {
+        DispatchQueue(label: "emulator").async { [weak self] in
+            guard let self = self else { return }
+
             while true {
                 self.makeStep()
 
@@ -107,11 +108,21 @@ public class Chip8 {
                     self.updateCanvas()
                 }
 
-                self.loadKeys()
-
-                usleep(10000)
+                usleep(10_000)
             }
         }
+    }
+
+    public func press(_ key: Int) {
+        let index = UInt16(1) << key
+        keyboard |= index
+        print(String(keyboard, radix: 2))
+    }
+
+    public func release(_ key: Int) {
+        let index = UInt16(1) << key
+        keyboard &= ~index
+        print(String(keyboard, radix: 2))
     }
 
     private func setup() {
@@ -337,8 +348,8 @@ public class Chip8 {
                 // EX9E
                 // Skips the next instruction if the key stored in VX is pressed. (Usually the next instruction is a jump to skip a code block)
                 let x = Int(opcode & 0x0F00) >> 8
-                let keyIndex = Int(v[x])
-                if keys[keyIndex] == 1 {
+                let keyIndex = UInt16(1) << v[x]
+                if keyboard & keyIndex > 0 {
                     pc += 2
                 }
 
@@ -346,8 +357,8 @@ public class Chip8 {
                 // EXA1
                 // Skips the next instruction if the key stored in VX isn't pressed. (Usually the next instruction is a jump to skip a code block)
                 let x = Int(opcode & 0x0F00) >> 8
-                let keyIndex = Int(v[x])
-                if keys[keyIndex] == 0 {
+                let keyIndex = UInt16(1) << v[x]
+                if keyboard & keyIndex == 0 {
                     pc += 2
                 }
 
@@ -479,9 +490,6 @@ public class Chip8 {
         DispatchQueue.main.async { [unowned self] in
             self.onDisplayUpdate?(self.display)
         }
-    }
-
-    private func loadKeys() {
     }
 
     private func checkRecursion() {
