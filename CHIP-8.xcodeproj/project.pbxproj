@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A3770FF3244E09D500C1379A /* DXYN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF2244E09D500C1379A /* DXYN.swift */; };
+		A3770FF5244E1DA900C1379A /* EX9E.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF4244E1DA900C1379A /* EX9E.swift */; };
+		A3770FF7244E28F600C1379A /* EXA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF6244E28F600C1379A /* EXA1.swift */; };
+		A3770FF9244E29BF00C1379A /* FX07.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF8244E29BF00C1379A /* FX07.swift */; };
+		A3770FFB244E2A7500C1379A /* FX0A.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FFA244E2A7500C1379A /* FX0A.swift */; };
+		A3770FFD244E2A8A00C1379A /* FX15.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FFC244E2A8A00C1379A /* FX15.swift */; };
+		A3770FFF244E2AC300C1379A /* FX18.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FFE244E2AC300C1379A /* FX18.swift */; };
+		A3771001244E2B2C00C1379A /* FX1E.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771000244E2B2C00C1379A /* FX1E.swift */; };
+		A3771003244E2DD100C1379A /* FX29.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771002244E2DD100C1379A /* FX29.swift */; };
+		A3771005244E2EFA00C1379A /* FX33.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771004244E2EFA00C1379A /* FX33.swift */; };
+		A3771007244E31C100C1379A /* FX55.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771006244E31C100C1379A /* FX55.swift */; };
+		A3771009244E334A00C1379A /* FX65.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771008244E334A00C1379A /* FX65.swift */; };
 		A3832BDA244A1A0300FEDA28 /* test.c8 in Resources */ = {isa = PBXBuildFile; fileRef = A3832BD9244A1A0300FEDA28 /* test.c8 */; };
 		A3832BE9244A312300FEDA28 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; };
 		A3832BF2244A312300FEDA28 /* Chip8.h in Headers */ = {isa = PBXBuildFile; fileRef = A3832BE2244A312300FEDA28 /* Chip8.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,6 +111,17 @@
 
 /* Begin PBXFileReference section */
 		A3770FF2244E09D500C1379A /* DXYN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXYN.swift; sourceTree = "<group>"; };
+		A3770FF4244E1DA900C1379A /* EX9E.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EX9E.swift; sourceTree = "<group>"; };
+		A3770FF6244E28F600C1379A /* EXA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXA1.swift; sourceTree = "<group>"; };
+		A3770FF8244E29BF00C1379A /* FX07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX07.swift; sourceTree = "<group>"; };
+		A3770FFA244E2A7500C1379A /* FX0A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX0A.swift; sourceTree = "<group>"; };
+		A3770FFC244E2A8A00C1379A /* FX15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX15.swift; sourceTree = "<group>"; };
+		A3770FFE244E2AC300C1379A /* FX18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX18.swift; sourceTree = "<group>"; };
+		A3771000244E2B2C00C1379A /* FX1E.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX1E.swift; sourceTree = "<group>"; };
+		A3771002244E2DD100C1379A /* FX29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX29.swift; sourceTree = "<group>"; };
+		A3771004244E2EFA00C1379A /* FX33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX33.swift; sourceTree = "<group>"; };
+		A3771006244E31C100C1379A /* FX55.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX55.swift; sourceTree = "<group>"; };
+		A3771008244E334A00C1379A /* FX65.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX65.swift; sourceTree = "<group>"; };
 		A3832BD9244A1A0300FEDA28 /* test.c8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.c8; sourceTree = "<group>"; };
 		A3832BE0244A312300FEDA28 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3832BE2244A312300FEDA28 /* Chip8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chip8.h; sourceTree = "<group>"; };
@@ -234,6 +256,17 @@
 				A3D92012244B528500913378 /* BNNN.swift */,
 				A3D92014244B52CF00913378 /* CXNN.swift */,
 				A3770FF2244E09D500C1379A /* DXYN.swift */,
+				A3770FF4244E1DA900C1379A /* EX9E.swift */,
+				A3770FF6244E28F600C1379A /* EXA1.swift */,
+				A3770FF8244E29BF00C1379A /* FX07.swift */,
+				A3770FFA244E2A7500C1379A /* FX0A.swift */,
+				A3770FFC244E2A8A00C1379A /* FX15.swift */,
+				A3770FFE244E2AC300C1379A /* FX18.swift */,
+				A3771000244E2B2C00C1379A /* FX1E.swift */,
+				A3771002244E2DD100C1379A /* FX29.swift */,
+				A3771004244E2EFA00C1379A /* FX33.swift */,
+				A3771006244E31C100C1379A /* FX55.swift */,
+				A3771008244E334A00C1379A /* FX65.swift */,
 				A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */,
 			);
 			path = OpCodes;
@@ -469,11 +502,17 @@
 				A3D9200D244B4F3900913378 /* 7XNN.swift in Sources */,
 				A3D91FE2244ADCE100913378 /* 8XY2.swift in Sources */,
 				A3D92015244B52CF00913378 /* CXNN.swift in Sources */,
+				A3771003244E2DD100C1379A /* FX29.swift in Sources */,
+				A3771001244E2B2C00C1379A /* FX1E.swift in Sources */,
 				A3D92008244B1A2200913378 /* 5XY0.swift in Sources */,
 				A3D91FDE244ADCD100913378 /* 8XY0.swift in Sources */,
 				A3FB15CD244D6ACD00203B07 /* UndefinedOpcodesTests.swift in Sources */,
+				A3770FFD244E2A8A00C1379A /* FX15.swift in Sources */,
 				A3D91FFC244B095A00913378 /* 1NNN.swift in Sources */,
+				A3770FF5244E1DA900C1379A /* EX9E.swift in Sources */,
+				A3771009244E334A00C1379A /* FX65.swift in Sources */,
 				A3D91FF7244B06FF00913378 /* 00E0.swift in Sources */,
+				A3771005244E2EFA00C1379A /* FX33.swift in Sources */,
 				A3D92011244B516000913378 /* ANNN.swift in Sources */,
 				A3D91FFF244B16AA00913378 /* 2NNN.swift in Sources */,
 				A3D92013244B528500913378 /* BNNN.swift in Sources */,
@@ -484,15 +523,20 @@
 				A3FB15CB244D663800203B07 /* Chip8Tests.swift in Sources */,
 				A3D91FEA244ADCF700913378 /* 8XY6.swift in Sources */,
 				A3D91FF9244B07A300913378 /* 00EE.swift in Sources */,
+				A3770FF7244E28F600C1379A /* EXA1.swift in Sources */,
 				A3D91FE6244ADCEB00913378 /* 8XY4.swift in Sources */,
+				A3770FFB244E2A7500C1379A /* FX0A.swift in Sources */,
 				A3D91FE4244ADCE700913378 /* 8XY3.swift in Sources */,
 				A3D91FE8244ADCF200913378 /* 8XY5.swift in Sources */,
 				A3D92002244B17DD00913378 /* 3XNN.swift in Sources */,
+				A3770FF9244E29BF00C1379A /* FX07.swift in Sources */,
+				A3770FFF244E2AC300C1379A /* FX18.swift in Sources */,
 				A3D9201E244C15C300913378 /* RandomizerMock.swift in Sources */,
 				A3D91FF3244ADD4200913378 /* Chip8TestCase.swift in Sources */,
 				A3D9200B244B4E8D00913378 /* 6XNN.swift in Sources */,
 				A3D9201B244C159800913378 /* UInt16.swift in Sources */,
 				A3D91FEE244ADD0100913378 /* 8XYE.swift in Sources */,
+				A3771007244E31C100C1379A /* FX55.swift in Sources */,
 				A3D92005244B19CA00913378 /* 4XNN.swift in Sources */,
 				A3D9200F244B508A00913378 /* 9XY0.swift in Sources */,
 			);

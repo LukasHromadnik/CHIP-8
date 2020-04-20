@@ -28,6 +28,7 @@ public class Randomizer: RandomizerProtocol {
 let kSpriteLength = 8
 let kInitProgramCounter: Data.Index = 0x200
 let kFontSetCounter: Data.Index = 0x50
+let kFontLetterWidth = 5
 let kDisplayWidth = 64
 let kDisplayHeight = 32
 
@@ -395,7 +396,7 @@ public class Chip8 {
 
             case 0xF01E:
                 // FX1E
-                // Adds VX to I. VF is set to 1 when there is a range overflow (I+VX>0xFFF), and to 0 when there isn't.[c]
+                // Adds VX to I. VF is set to 1 when there is a range overflow (I+VX>0xFFF), and to 0 when there isn't.
                 let x = Int(opcode & 0x0F00) >> 8
                 let (partial, overflow) = vI.addingReportingOverflow(UInt16(v[x]))
                 vI = partial
@@ -406,7 +407,7 @@ public class Chip8 {
                 // Sets I to the location of the sprite for the character in VX. Characters 0-F (in hexadecimal) are represented by a 4x5 font.
                 let x = Int(opcode & 0x0F00) >> 8
                 let letter = Int(v[x])
-                vI = UInt16(kFontSetCounter + letter * 5)
+                vI = UInt16(kFontSetCounter + letter * kFontLetterWidth)
 
             case 0xF033:
                 // FX33
@@ -417,7 +418,7 @@ public class Chip8 {
                 let x = Int(opcode & 0x0F00) >> 8
                 memory[Int(vI)]     = v[x] / 100
                 memory[Int(vI) + 1] = (v[x] / 10) % 10
-                memory[Int(vI) + 2] = (v[x] % 100) % 10
+                memory[Int(vI) + 2] = v[x] % 10
 
             case 0xF055:
                 // FX55

@@ -27,6 +27,12 @@ class Chip8TestCase: XCTestCase {
         super.tearDown()
     }
 
+    override func invokeTest() {
+        for _ in 0...100 {
+            super.invokeTest()
+        }
+    }
+
     // MARK: - Public API
 
     func generateTwoDifferentRandom<R, T>(in range: R, ofType: T.Type = T.self) -> (T, T) where R: RangeExpression, R.Bound == T, T: Randomizable {
