@@ -74,10 +74,10 @@ public class Chip8 {
 
     public init(rom: String) {
         self.rom = rom
+        setup()
     }
 
     public func run() {
-        setup()
         loadROM(rom)
 
         DispatchQueue(label: "emulator").async {

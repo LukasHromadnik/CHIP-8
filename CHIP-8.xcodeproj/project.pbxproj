@@ -55,6 +55,7 @@
 		A3D92020244C167300913378 /* UInt16Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201F244C167300913378 /* UInt16Tests.swift */; };
 		A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C6244D65A000203B07 /* PixelView.swift */; };
 		A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C8244D65BF00203B07 /* Rom.swift */; };
+		A3FB15CB244D663800203B07 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15CA244D663800203B07 /* Chip8Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		A3D9201F244C167300913378 /* UInt16Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16Tests.swift; sourceTree = "<group>"; };
 		A3FB15C6244D65A000203B07 /* PixelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelView.swift; sourceTree = "<group>"; };
 		A3FB15C8244D65BF00203B07 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
+		A3FB15CA244D663800203B07 /* Chip8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +192,13 @@
 		A3832BEE244A312300FEDA28 /* Chip8Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A3D91FF2244ADD4200913378 /* Chip8TestCase.swift */,
+				A3D91FEF244ADD0F00913378 /* Extensions */,
+				A3832C01244A31C300FEDA28 /* OpCodes */,
+				A3FB15CA244D663800203B07 /* Chip8Tests.swift */,
 				A3D82299244C19DA00743780 /* Draw.swift */,
 				A3D9201F244C167300913378 /* UInt16Tests.swift */,
-				A3832C01244A31C300FEDA28 /* OpCodes */,
-				A3D91FEF244ADD0F00913378 /* Extensions */,
 				A3D9201C244C15BC00913378 /* Mocks */,
+				A3D91FF2244ADD4200913378 /* Chip8TestCase.swift */,
 				A3832BF1244A312300FEDA28 /* Info.plist */,
 			);
 			path = Chip8Tests;
@@ -470,6 +473,7 @@
 				A3D92020244C167300913378 /* UInt16Tests.swift in Sources */,
 				A3D8229A244C19DA00743780 /* Draw.swift in Sources */,
 				A3D91FEC244ADCFC00913378 /* 8XY7.swift in Sources */,
+				A3FB15CB244D663800203B07 /* Chip8Tests.swift in Sources */,
 				A3D91FEA244ADCF700913378 /* 8XY6.swift in Sources */,
 				A3D91FF9244B07A300913378 /* 00EE.swift in Sources */,
 				A3D91FE6244ADCEB00913378 /* 8XY4.swift in Sources */,
