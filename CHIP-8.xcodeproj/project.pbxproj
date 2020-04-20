@@ -56,6 +56,7 @@
 		A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C6244D65A000203B07 /* PixelView.swift */; };
 		A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C8244D65BF00203B07 /* Rom.swift */; };
 		A3FB15CB244D663800203B07 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15CA244D663800203B07 /* Chip8Tests.swift */; };
+		A3FB15CD244D6ACD00203B07 /* UndefinedOpcodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		A3FB15C6244D65A000203B07 /* PixelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelView.swift; sourceTree = "<group>"; };
 		A3FB15C8244D65BF00203B07 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
 		A3FB15CA244D663800203B07 /* Chip8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8Tests.swift; sourceTree = "<group>"; };
+		A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndefinedOpcodesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				A3D92010244B516000913378 /* ANNN.swift */,
 				A3D92012244B528500913378 /* BNNN.swift */,
 				A3D92014244B52CF00913378 /* CXNN.swift */,
+				A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */,
 			);
 			path = OpCodes;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A3D92015244B52CF00913378 /* CXNN.swift in Sources */,
 				A3D92008244B1A2200913378 /* 5XY0.swift in Sources */,
 				A3D91FDE244ADCD100913378 /* 8XY0.swift in Sources */,
+				A3FB15CD244D6ACD00203B07 /* UndefinedOpcodesTests.swift in Sources */,
 				A3D91FFC244B095A00913378 /* 1NNN.swift in Sources */,
 				A3D91FF7244B06FF00913378 /* 00E0.swift in Sources */,
 				A3D92011244B516000913378 /* ANNN.swift in Sources */,

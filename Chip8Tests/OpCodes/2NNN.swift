@@ -19,7 +19,7 @@ final class OpCode2NNNTests: Chip8TestCase {
         chip8.sp = randomSP
 
         chip8.opcode = 0x2000 | randomAddressAfter
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.sp, randomSP + 1)
         XCTAssertEqual(chip8.stack[chip8.sp - 1], randomAddressBefore)

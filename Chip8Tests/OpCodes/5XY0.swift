@@ -18,7 +18,7 @@ final class OpCode5XY0Tests: Chip8TestCase {
         chip8.v[x] = valueX
         chip8.v[y] = valueY
         chip8.opcode = 0x5000 | UInt16(x) << 8 | UInt16(y) << 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         let shouldSkip = valueX == valueY
         XCTAssertEqual(chip8.pc, shouldSkip ? 4 : 2)
@@ -31,7 +31,7 @@ final class OpCode5XY0Tests: Chip8TestCase {
         chip8.v[y] = 2
 
         chip8.opcode = 0x5000 | UInt16(x) << 8 | UInt16(y) << 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.pc, 2)
     }
@@ -43,7 +43,7 @@ final class OpCode5XY0Tests: Chip8TestCase {
         chip8.v[y] = 2
 
         chip8.opcode = 0x5000 | UInt16(x) << 8 | UInt16(y) << 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.pc, 4)
     }

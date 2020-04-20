@@ -19,7 +19,7 @@ final class OpCode8XY0Tests: Chip8TestCase {
         chip8.v[y] = valueY
 
         chip8.opcode = 0x8000 | UInt16(x) << 8 | UInt16(y) << 4 | 0
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x8000)
         XCTAssertEqual(chip8.v[x], valueY)

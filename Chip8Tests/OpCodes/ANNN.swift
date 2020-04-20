@@ -14,7 +14,7 @@ final class OpCodeANNNTests: Chip8TestCase {
         let value: UInt16 = .random(in: 0...0xFFF)
 
         chip8.opcode = 0xA000 | value
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.vI, value)
         XCTAssertEqual(chip8.pc, 2)

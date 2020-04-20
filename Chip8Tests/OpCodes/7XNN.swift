@@ -18,7 +18,7 @@ final class OpCode7XNNTests: Chip8TestCase {
         chip8.v[x] = initialValue
 
         chip8.opcode = 0x7000 | UInt16(x) << 8 | UInt16(value)
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         let result = UInt8(((UInt16(initialValue) + UInt16(value)) << 8) >> 8)
         XCTAssertEqual(chip8.v[x], result)

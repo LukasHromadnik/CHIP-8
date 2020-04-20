@@ -14,7 +14,7 @@ final class OpCode1NNNTests: Chip8TestCase {
         let randomAddress: UInt16 = .random(in: 0..<0xFFF)
 
         chip8.opcode = 0x1000 | randomAddress
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.pc, Int(randomAddress))
     }

@@ -19,7 +19,7 @@ final class OpCode8XY4Tests: Chip8TestCase {
         chip8.v[y] = valueY
 
         chip8.opcode = 0x8000 | UInt16(x) << 8 | UInt16(y) << 4 | 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x8004)
         XCTAssertEqual(chip8.v[x], 3)
@@ -37,7 +37,7 @@ final class OpCode8XY4Tests: Chip8TestCase {
         chip8.v[y] = valueY
 
         chip8.opcode = 0x8000 | UInt16(x) << 8 | UInt16(y) << 4 | 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x8004)
         XCTAssertEqual(chip8.v[x], 0)
@@ -58,7 +58,7 @@ final class OpCode8XY4Tests: Chip8TestCase {
         chip8.v[y] = valueY
 
         chip8.opcode = 0x8000 | UInt16(x) << 8 | UInt16(y) << 4 | 4
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x8004)
         XCTAssertEqual(chip8.v[x], UInt8((sum << 8) >> 8))

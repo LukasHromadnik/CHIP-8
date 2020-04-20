@@ -31,6 +31,24 @@ let kFontSetCounter: Data.Index = 0x50
 let kDisplayWidth = 64
 let kDisplayHeight = 32
 
+enum Chip8Error: Error {
+    case undefinedOpcode(UInt16)
+    case notImplemented(UInt16)
+}
+
+extension Chip8Error: Equatable {
+    static func == (lhs: Chip8Error, rhs: Chip8Error) -> Bool {
+        switch (lhs, rhs) {
+        case (.undefinedOpcode(let lhsOpcode), .undefinedOpcode(let rhsOpcode)):
+            return lhsOpcode == rhsOpcode
+        case (.notImplemented(let lhsOpcode), .notImplemented(let rhsOpcode)):
+            return lhsOpcode == rhsOpcode
+        default:
+            return false
+        }
+    }
+}
+
 public class Chip8 {
     /// Memory, size 4 096 bytes
     var memory = Data(repeating: 0, count: 4096)
@@ -71,6 +89,7 @@ public class Chip8 {
 
     var randomizer: RandomizerProtocol = Randomizer()
     private let rom: String
+    var shouldCheckRecursion = false
 
     public init(rom: String) {
         self.rom = rom
@@ -110,7 +129,13 @@ public class Chip8 {
 
     private func makeStep() {
         fetchOpcode()
-        decodeOpcode()
+        do {
+            try decodeOpcode()
+        } catch Chip8Error.undefinedOpcode(let opcode) {
+            assertionFailure(String(format: "Undefined opcode 0x%X", opcode))
+        } catch {
+            assertionFailure(error.localizedDescription)
+        }
         updateTimers()
     }
 
@@ -118,12 +143,8 @@ public class Chip8 {
         opcode = UInt16(memory[pc]) << 8 | UInt16(memory[pc + 1])
     }
 
-    func decodeOpcode() {
-//        if lastOpcode == opcode {
-//            assertionFailure("Possible recursion")
-//            return
-//        }
-        lastOpcode = opcode
+    func decodeOpcode() throws {
+        checkRecursion()
         switch opcode & 0xF000 {
         case 0x0000:
             switch opcode & 0x0FFF {
@@ -143,7 +164,7 @@ public class Chip8 {
             default:
                 // 0NNN
                 // Calls RCA 1802 program at address NNN. Not necessary for most ROMs
-                assertionFailure("Not implemented")
+                throw Chip8Error.notImplemented(opcode)
             }
 
         case 0x1000:
@@ -259,7 +280,7 @@ public class Chip8 {
                 v[x] <<= 1
 
             default:
-                assertionFailure(String(format: "Undefined opcode 0x%X", opcode))
+                throw Chip8Error.undefinedOpcode(opcode)
             }
 
             pc += 2
@@ -311,7 +332,7 @@ public class Chip8 {
             pc += 2
 
         case 0xE000:
-            switch opcode & 0xFFFF {
+            switch opcode & 0xF0FF {
             case 0xE09E:
                 // EX9E
                 // Skips the next instruction if the key stored in VX is pressed. (Usually the next instruction is a jump to skip a code block)
@@ -331,7 +352,7 @@ public class Chip8 {
                 }
 
             default:
-                assertionFailure(String(format: "Undefined opcode 0x%X", opcode))
+                throw Chip8Error.undefinedOpcode(opcode)
             }
 
             pc += 2
@@ -404,13 +425,13 @@ public class Chip8 {
                 }
 
             default:
-                assertionFailure(String(format: "Undefined opcode 0x%X", opcode))
+                throw Chip8Error.undefinedOpcode(opcode)
             }
 
             pc += 2
 
         default:
-            assertionFailure(String(format: "Undefined opcode 0x%X", opcode))
+            throw Chip8Error.undefinedOpcode(opcode)
         }
     }
 
@@ -461,6 +482,15 @@ public class Chip8 {
     }
 
     private func loadKeys() {
+    }
+
+    private func checkRecursion() {
+        guard shouldCheckRecursion else { return }
+        if lastOpcode == opcode {
+            assertionFailure("Possible recursion")
+            return
+        }
+        lastOpcode = opcode
     }
 }
 

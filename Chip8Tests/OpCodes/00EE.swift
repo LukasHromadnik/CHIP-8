@@ -18,7 +18,7 @@ final class OpCode00EETests: Chip8TestCase {
         chip8.sp += 1
 
         chip8.opcode = 0x00EE
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.sp, randomSP)
         XCTAssertEqual(chip8.pc, randomPC)

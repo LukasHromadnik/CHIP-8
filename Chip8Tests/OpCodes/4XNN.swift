@@ -17,7 +17,7 @@ final class OpCode4NNNTests: Chip8TestCase {
 
         chip8.v[x] = value
         chip8.opcode = 0x4000 | UInt16(x) << 8 | UInt16(addressValue)
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         let shouldSkip = value != addressValue
         XCTAssertEqual(chip8.pc, shouldSkip ? 4 : 2)
@@ -29,7 +29,7 @@ final class OpCode4NNNTests: Chip8TestCase {
 
         chip8.v[x] = value
         chip8.opcode = 0x4000 | UInt16(x) << 8 | UInt16(value)
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.pc, 2)
     }
@@ -49,7 +49,7 @@ final class OpCode4NNNTests: Chip8TestCase {
 
         chip8.v[x] = value
         chip8.opcode = 0x4000 | UInt16(x) << 8 | UInt16(addressValue)
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.pc, 4)
     }

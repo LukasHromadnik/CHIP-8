@@ -16,7 +16,7 @@ final class OpCode00E0Tests: Chip8TestCase {
         }
 
         chip8.opcode = 0x00E0
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.display.reduce(0, +), 0)
         XCTAssertTrue(chip8.shouldDraw)

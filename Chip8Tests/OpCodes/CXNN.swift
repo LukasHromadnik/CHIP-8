@@ -32,7 +32,7 @@ final class OpCodeCXNNTests: Chip8TestCase {
         randomizer.bytes = [randomValue]
 
         chip8.opcode = 0xC000 | UInt16(x) << 8 | UInt16(nn)
-        chip8.decodeOpcode()
+        XCTAssertNoThrow(try chip8.decodeOpcode())
 
         XCTAssertEqual(chip8.v[x], nn & randomValue)
         XCTAssertEqual(chip8.pc, 2)
