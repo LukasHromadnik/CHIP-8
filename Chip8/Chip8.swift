@@ -89,7 +89,7 @@ public class Chip8 {
 
     var randomizer: RandomizerProtocol = Randomizer()
     private let rom: String
-    var shouldCheckRecursion = false
+    var shouldCheckRecursion = true
 
     public init(rom: String) {
         self.rom = rom
@@ -99,31 +99,22 @@ public class Chip8 {
     public func run() {
         loadROM(rom)
 
-        DispatchQueue(label: "emulator").async { [weak self] in
-            guard let self = self else { return }
+        Timer.scheduledTimer(withTimeInterval: 1.0 / 400, repeats: true) { [weak self] timer in
+            guard let self = self else { timer.invalidate(); return }
+            self.makeStep()
 
-            while true {
-                self.makeStep()
-
-                if self.shouldDraw {
-                    self.updateCanvas()
-                }
-
-                usleep(10_000)
+            if self.shouldDraw {
+                self.updateCanvas()
             }
         }
     }
 
     public func press(_ key: Int) {
-        let index = UInt16(1) << key
-        keyboard |= index
-        print(String(keyboard, radix: 2))
+        keyboard |= UInt16(1) << key
     }
 
     public func release(_ key: Int) {
-        let index = UInt16(1) << key
-        keyboard &= ~index
-        print(String(keyboard, radix: 2))
+        keyboard &= ~(UInt16(1) << key)
     }
 
     private func setup() {
@@ -165,7 +156,6 @@ public class Chip8 {
                 // Clears the screen.
                 clearDisplay()
                 shouldDraw = true
-                pc += 2
 
             case 0x00EE:
                 // 00EE
@@ -178,6 +168,8 @@ public class Chip8 {
                 // Calls RCA 1802 program at address NNN. Not necessary for most ROMs
                 throw Chip8Error.notImplemented(opcode)
             }
+
+            pc += 2
 
         case 0x1000:
             // 1NNN
