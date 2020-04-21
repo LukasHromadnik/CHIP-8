@@ -34,7 +34,7 @@ final class OpCode8XYETests: Chip8TestCase {
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x800E)
         XCTAssertEqual(chip8.v[x], 0b01010100)
-        XCTAssertEqual(chip8.vf, 0x80)
+        XCTAssertEqual(chip8.vf, 1)
         XCTAssertEqual(chip8.pc, 2)
     }
 
@@ -49,7 +49,7 @@ final class OpCode8XYETests: Chip8TestCase {
 
         XCTAssertEqual(chip8.opcode & 0xF00F, 0x800E)
         XCTAssertEqual(chip8.v[x], value << 1)
-        XCTAssertEqual(chip8.vf, value & 0x80)
+        XCTAssertEqual(chip8.vf, (value & 0x80) >> 7)
         XCTAssertEqual(chip8.pc, 2)
     }
 }

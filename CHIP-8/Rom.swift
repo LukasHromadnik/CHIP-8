@@ -14,6 +14,8 @@ enum Rom: String {
     case maze = "MAZE"
     case pong = "PONG"
     case test = "test.c8"
+    case test2 = "BC_test.ch8"
     case puzzle = "PUZZLE"
     case ticTacToe = "TICTACTOE"
+    case tetris = "TETRIS"
 }

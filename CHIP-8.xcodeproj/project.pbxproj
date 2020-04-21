@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31A2A46244EBEB900B0AC0F /* BC_test.ch8 in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A45244EBEB900B0AC0F /* BC_test.ch8 */; };
+		A31A2A48244EBEBF00B0AC0F /* TETRIS in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A47244EBEBF00B0AC0F /* TETRIS */; };
 		A3770FF3244E09D500C1379A /* DXYN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF2244E09D500C1379A /* DXYN.swift */; };
 		A3770FF5244E1DA900C1379A /* EX9E.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF4244E1DA900C1379A /* EX9E.swift */; };
 		A3770FF7244E28F600C1379A /* EXA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF6244E28F600C1379A /* EXA1.swift */; };
@@ -110,6 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A31A2A45244EBEB900B0AC0F /* BC_test.ch8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BC_test.ch8; sourceTree = "<group>"; };
+		A31A2A47244EBEBF00B0AC0F /* TETRIS */ = {isa = PBXFileReference; lastKnownFileType = file; path = TETRIS; sourceTree = "<group>"; };
 		A3770FF2244E09D500C1379A /* DXYN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXYN.swift; sourceTree = "<group>"; };
 		A3770FF4244E1DA900C1379A /* EX9E.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EX9E.swift; sourceTree = "<group>"; };
 		A3770FF6244E28F600C1379A /* EXA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXA1.swift; sourceTree = "<group>"; };
@@ -204,6 +208,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31A2A44244EBEA200B0AC0F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A31A2A45244EBEB900B0AC0F /* BC_test.ch8 */,
+				A3832BD9244A1A0300FEDA28 /* test.c8 */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		A3832BE1244A312300FEDA28 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,12 +288,13 @@
 		A3CC63602448E31700F9F28A /* ROMs */ = {
 			isa = PBXGroup;
 			children = (
+				A31A2A44244EBEA200B0AC0F /* Tests */,
 				A3CC63642448E32500F9F28A /* BRIX */,
 				A3CC63652448E32500F9F28A /* CONNECT4 */,
 				A3CC63632448E32500F9F28A /* MAZE */,
 				A3CC63662448E32500F9F28A /* PONG */,
-				A3832BD9244A1A0300FEDA28 /* test.c8 */,
 				A3CC63612448E32500F9F28A /* PUZZLE */,
+				A31A2A47244EBEBF00B0AC0F /* TETRIS */,
 				A3CC63622448E32500F9F28A /* TICTACTOE */,
 			);
 			path = ROMs;
@@ -470,10 +484,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CC636B2448E34800F9F28A /* PUZZLE in Resources */,
+				A31A2A48244EBEBF00B0AC0F /* TETRIS in Resources */,
 				A3CC63692448E34800F9F28A /* CONNECT4 in Resources */,
 				A3CC63682448E34600F9F28A /* MAZE in Resources */,
 				A3CC636A2448E34800F9F28A /* PONG in Resources */,
 				A3CC636C2448E34800F9F28A /* TICTACTOE in Resources */,
+				A31A2A46244EBEB900B0AC0F /* BC_test.ch8 in Resources */,
 				A3D6BD472448D8EE00579B97 /* LaunchScreen.storyboard in Resources */,
 				A3CC63672448E34200F9F28A /* BRIX in Resources */,
 				A3D6BD442448D8EE00579B97 /* Assets.xcassets in Resources */,

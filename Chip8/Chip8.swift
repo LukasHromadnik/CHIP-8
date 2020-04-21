@@ -84,12 +84,13 @@ public class Chip8 {
     var keyboard: UInt16 = 0
 
     var shouldDraw = false
+    var waitForKey = false
 
     private var lastOpcode: UInt16?
 
     var randomizer: RandomizerProtocol = Randomizer()
     private let rom: String
-    var shouldCheckRecursion = true
+    var shouldCheckRecursion = false
 
     public init(rom: String) {
         self.rom = rom
@@ -101,6 +102,7 @@ public class Chip8 {
 
         Timer.scheduledTimer(withTimeInterval: 1.0 / 400, repeats: true) { [weak self] timer in
             guard let self = self else { timer.invalidate(); return }
+
             self.makeStep()
 
             if self.shouldDraw {
@@ -261,7 +263,7 @@ public class Chip8 {
                 // 8XY5
                 // VY is subtracted from VX. VF is set to 0 when there's a borrow, and 1 when there isn't.
                 let (partial, overflow) = v[x].subtractingReportingOverflow(v[y])
-                vf = overflow ? 1 : 0
+                vf = overflow ? 0 : 1
                 v[x] = partial
 
             case 0x8006:
@@ -275,12 +277,12 @@ public class Chip8 {
                 // Sets VX to VY minus VX. VF is set to 0 when there's a borrow, and 1 when there isn't.
                 let (partial, overflow) = v[y].subtractingReportingOverflow(v[x])
                 v[x] = partial
-                vf = overflow ? 1 : 0
+                vf = overflow ? 0 : 1
 
             case 0x800E:
                 // 8XYE
                 // Stores the most significant bit of VX in VF and then shifts VX to the left by 1.
-                vf = v[x] & 0x80
+                vf = (v[x] & 0x80) >> 7
                 v[x] <<= 1
 
             default:
@@ -372,7 +374,30 @@ public class Chip8 {
             case 0xF00A:
                 // FX0A
                 // A key press is awaited, and then stored in VX. (Blocking Operation. All instruction halted until next key event)
-                assertionFailure("Not implemented")
+
+                // Waiting condition
+                switch (waitForKey, keyboard == 0) {
+                case (true, true):
+                    // Waiting condition
+                    return
+
+                case (false, _):
+                    waitForKey = true
+                    return
+
+                case (true, false):
+                    var key = -1
+                    for i in 0..<16 {
+                        let keyIsPressed = (keyboard >> i) & 1 == 1
+                        guard keyIsPressed else { continue }
+                        key = i
+                    }
+
+                    let x = Int(opcode & 0x0F00) >> 8
+                    v[x] = UInt8(key)
+
+                    pc += 2
+                }
 
             case 0xF015:
                 // FX15
