@@ -100,7 +100,7 @@ public class Chip8 {
     public func run() {
         loadROM(rom)
 
-        Timer.scheduledTimer(withTimeInterval: 1.0 / 400, repeats: true) { [weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: 1.0 / 500, repeats: true) { [weak self] timer in
             guard let self = self else { timer.invalidate(); return }
 
             self.makeStep()
@@ -108,6 +108,12 @@ public class Chip8 {
             if self.shouldDraw {
                 self.updateCanvas()
             }
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true) { [weak self] timer in
+            guard let self = self else { timer.invalidate(); return }
+
+            self.updateTimers()
         }
     }
 
@@ -141,7 +147,6 @@ public class Chip8 {
         } catch {
             assertionFailure(error.localizedDescription)
         }
-        updateTimers()
     }
 
     private func fetchOpcode() {

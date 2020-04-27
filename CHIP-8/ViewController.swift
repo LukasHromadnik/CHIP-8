@@ -9,7 +9,7 @@
 import UIKit
 import Chip8
 
-let kSelectedRom: Rom = .tetris
+let kSelectedRom: Rom = .brix
 
 class KeyButton: UIButton {
     override var bounds: CGRect {
