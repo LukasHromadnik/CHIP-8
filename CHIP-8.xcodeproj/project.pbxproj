@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A31A2A46244EBEB900B0AC0F /* BC_test.ch8 in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A45244EBEB900B0AC0F /* BC_test.ch8 */; };
-		A31A2A48244EBEBF00B0AC0F /* TETRIS in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A47244EBEBF00B0AC0F /* TETRIS */; };
 		A3770FF3244E09D500C1379A /* DXYN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF2244E09D500C1379A /* DXYN.swift */; };
 		A3770FF5244E1DA900C1379A /* EX9E.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF4244E1DA900C1379A /* EX9E.swift */; };
 		A3770FF7244E28F600C1379A /* EXA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3770FF6244E28F600C1379A /* EXA1.swift */; };
@@ -21,19 +19,29 @@
 		A3771005244E2EFA00C1379A /* FX33.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771004244E2EFA00C1379A /* FX33.swift */; };
 		A3771007244E31C100C1379A /* FX55.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771006244E31C100C1379A /* FX55.swift */; };
 		A3771009244E334A00C1379A /* FX65.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3771008244E334A00C1379A /* FX65.swift */; };
-		A3832BDA244A1A0300FEDA28 /* test.c8 in Resources */ = {isa = PBXBuildFile; fileRef = A3832BD9244A1A0300FEDA28 /* test.c8 */; };
 		A3832BE9244A312300FEDA28 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; };
 		A3832BF2244A312300FEDA28 /* Chip8.h in Headers */ = {isa = PBXBuildFile; fileRef = A3832BE2244A312300FEDA28 /* Chip8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3832BF5244A312300FEDA28 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; };
 		A3832BF6244A312300FEDA28 /* Chip8.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3832BFE244A312C00FEDA28 /* Chip8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6BD4E2448D90500579B97 /* Chip8.swift */; };
 		A3832C00244A316800FEDA28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6BD3E2448D8EB00579B97 /* ViewController.swift */; };
-		A3CC63672448E34200F9F28A /* BRIX in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63642448E32500F9F28A /* BRIX */; };
-		A3CC63682448E34600F9F28A /* MAZE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63632448E32500F9F28A /* MAZE */; };
-		A3CC63692448E34800F9F28A /* CONNECT4 in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63652448E32500F9F28A /* CONNECT4 */; };
-		A3CC636A2448E34800F9F28A /* PONG in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63662448E32500F9F28A /* PONG */; };
-		A3CC636B2448E34800F9F28A /* PUZZLE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63612448E32500F9F28A /* PUZZLE */; };
-		A3CC636C2448E34800F9F28A /* TICTACTOE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63622448E32500F9F28A /* TICTACTOE */; };
+		A38684682459F2DA0051A20F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38684672459F2DA0051A20F /* AppDelegate.swift */; };
+		A386846A2459F2DA0051A20F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38684692459F2DA0051A20F /* ViewController.swift */; };
+		A386846C2459F2DD0051A20F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A386846B2459F2DD0051A20F /* Assets.xcassets */; };
+		A38684762459F47D0051A20F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38684752459F47D0051A20F /* main.swift */; };
+		A38684782459F7B80051A20F /* PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38684772459F7B80051A20F /* PixelView.swift */; };
+		A386847C2459F8630051A20F /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; };
+		A386847D2459F8630051A20F /* Chip8.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3832BE0244A312300FEDA28 /* Chip8.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A38684812459FBB30051A20F /* BRIX in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63642448E32500F9F28A /* BRIX */; };
+		A38684822459FBB60051A20F /* CONNECT4 in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63652448E32500F9F28A /* CONNECT4 */; };
+		A38684832459FBB60051A20F /* MAZE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63632448E32500F9F28A /* MAZE */; };
+		A38684842459FBB60051A20F /* PONG in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63662448E32500F9F28A /* PONG */; };
+		A38684852459FBB60051A20F /* PUZZLE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63612448E32500F9F28A /* PUZZLE */; };
+		A38684862459FBB60051A20F /* TETRIS in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A47244EBEBF00B0AC0F /* TETRIS */; };
+		A38684872459FBB60051A20F /* TICTACTOE in Resources */ = {isa = PBXBuildFile; fileRef = A3CC63622448E32500F9F28A /* TICTACTOE */; };
+		A38684882459FBBF0051A20F /* BC_test.ch8 in Resources */ = {isa = PBXBuildFile; fileRef = A31A2A45244EBEB900B0AC0F /* BC_test.ch8 */; };
+		A38684892459FBBF0051A20F /* test.c8 in Resources */ = {isa = PBXBuildFile; fileRef = A3832BD9244A1A0300FEDA28 /* test.c8 */; };
+		A386848A2459FCAD0051A20F /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C8244D65BF00203B07 /* ROM.swift */; };
 		A3D6BD3B2448D8EB00579B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6BD3A2448D8EB00579B97 /* AppDelegate.swift */; };
 		A3D6BD3D2448D8EB00579B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6BD3C2448D8EB00579B97 /* SceneDelegate.swift */; };
 		A3D6BD422448D8EB00579B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D6BD402448D8EB00579B97 /* Main.storyboard */; };
@@ -68,7 +76,6 @@
 		A3D9201E244C15C300913378 /* RandomizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201D244C15C300913378 /* RandomizerMock.swift */; };
 		A3D92020244C167300913378 /* UInt16Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9201F244C167300913378 /* UInt16Tests.swift */; };
 		A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C6244D65A000203B07 /* PixelView.swift */; };
-		A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15C8244D65BF00203B07 /* Rom.swift */; };
 		A3FB15CB244D663800203B07 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15CA244D663800203B07 /* Chip8Tests.swift */; };
 		A3FB15CD244D6ACD00203B07 /* UndefinedOpcodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +102,20 @@
 			remoteGlobalIDString = A3832BDF244A312300FEDA28;
 			remoteInfo = Chip8;
 		};
+		A38684792459F8240051A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D6BD2F2448D8EB00579B97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3832BDF244A312300FEDA28;
+			remoteInfo = Chip8;
+		};
+		A386847E2459F8630051A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D6BD2F2448D8EB00579B97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3832BDF244A312300FEDA28;
+			remoteInfo = Chip8;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +126,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A3832BF6244A312300FEDA28 /* Chip8.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A38684802459F8630051A20F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A386847D2459F8630051A20F /* Chip8.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +164,14 @@
 		A3832BE3244A312300FEDA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3832BE8244A312300FEDA28 /* Chip8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Chip8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3832BF1244A312300FEDA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A38684652459F2DA0051A20F /* Chip8Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chip8Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A38684672459F2DA0051A20F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A38684692459F2DA0051A20F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A386846B2459F2DD0051A20F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A38684702459F2DD0051A20F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A38684712459F2DD0051A20F /* Chip8Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chip8Mac.entitlements; sourceTree = "<group>"; };
+		A38684752459F47D0051A20F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A38684772459F7B80051A20F /* PixelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelView.swift; sourceTree = "<group>"; };
 		A3CC63612448E32500F9F28A /* PUZZLE */ = {isa = PBXFileReference; lastKnownFileType = file; path = PUZZLE; sourceTree = "<group>"; };
 		A3CC63622448E32500F9F28A /* TICTACTOE */ = {isa = PBXFileReference; lastKnownFileType = file; path = TICTACTOE; sourceTree = "<group>"; };
 		A3CC63632448E32500F9F28A /* MAZE */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAZE; sourceTree = "<group>"; };
@@ -176,7 +216,7 @@
 		A3D9201D244C15C300913378 /* RandomizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerMock.swift; sourceTree = "<group>"; };
 		A3D9201F244C167300913378 /* UInt16Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16Tests.swift; sourceTree = "<group>"; };
 		A3FB15C6244D65A000203B07 /* PixelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelView.swift; sourceTree = "<group>"; };
-		A3FB15C8244D65BF00203B07 /* Rom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rom.swift; sourceTree = "<group>"; };
+		A3FB15C8244D65BF00203B07 /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		A3FB15CA244D663800203B07 /* Chip8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8Tests.swift; sourceTree = "<group>"; };
 		A3FB15CC244D6ACD00203B07 /* UndefinedOpcodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndefinedOpcodesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +234,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3832BE9244A312300FEDA28 /* Chip8.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A38684622459F2DA0051A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A386847C2459F8630051A20F /* Chip8.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +268,11 @@
 		A3832BE1244A312300FEDA28 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
+				A3CC63602448E31700F9F28A /* ROMs */,
 				A3832BE2244A312300FEDA28 /* Chip8.h */,
 				A3832BE3244A312300FEDA28 /* Info.plist */,
 				A3D6BD4E2448D90500579B97 /* Chip8.swift */,
+				A3FB15C8244D65BF00203B07 /* ROM.swift */,
 				A3D92016244B62B200913378 /* Randomizable.swift */,
 			);
 			path = Chip8;
@@ -285,6 +335,27 @@
 			path = OpCodes;
 			sourceTree = "<group>";
 		};
+		A38684662459F2DA0051A20F /* Chip8Mac */ = {
+			isa = PBXGroup;
+			children = (
+				A38684672459F2DA0051A20F /* AppDelegate.swift */,
+				A38684692459F2DA0051A20F /* ViewController.swift */,
+				A38684772459F7B80051A20F /* PixelView.swift */,
+				A38684752459F47D0051A20F /* main.swift */,
+				A386846B2459F2DD0051A20F /* Assets.xcassets */,
+				A38684702459F2DD0051A20F /* Info.plist */,
+				A38684712459F2DD0051A20F /* Chip8Mac.entitlements */,
+			);
+			path = Chip8Mac;
+			sourceTree = "<group>";
+		};
+		A386847B2459F8630051A20F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A3CC63602448E31700F9F28A /* ROMs */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,9 +375,11 @@
 			isa = PBXGroup;
 			children = (
 				A3D6BD392448D8EB00579B97 /* CHIP-8 */,
+				A38684662459F2DA0051A20F /* Chip8Mac */,
 				A3832BE1244A312300FEDA28 /* Chip8 */,
 				A3832BEE244A312300FEDA28 /* Chip8Tests */,
 				A3D6BD382448D8EB00579B97 /* Products */,
+				A386847B2459F8630051A20F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -316,6 +389,7 @@
 				A3D6BD372448D8EB00579B97 /* CHIP-8.app */,
 				A3832BE0244A312300FEDA28 /* Chip8.framework */,
 				A3832BE8244A312300FEDA28 /* Chip8Tests.xctest */,
+				A38684652459F2DA0051A20F /* Chip8Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,11 +397,9 @@
 		A3D6BD392448D8EB00579B97 /* CHIP-8 */ = {
 			isa = PBXGroup;
 			children = (
-				A3CC63602448E31700F9F28A /* ROMs */,
 				A3D6BD3A2448D8EB00579B97 /* AppDelegate.swift */,
 				A3D6BD3C2448D8EB00579B97 /* SceneDelegate.swift */,
 				A3D6BD3E2448D8EB00579B97 /* ViewController.swift */,
-				A3FB15C8244D65BF00203B07 /* Rom.swift */,
 				A3FB15C6244D65A000203B07 /* PixelView.swift */,
 				A3D6BD402448D8EB00579B97 /* Main.storyboard */,
 				A3D6BD432448D8EE00579B97 /* Assets.xcassets */,
@@ -404,6 +476,26 @@
 			productReference = A3832BE8244A312300FEDA28 /* Chip8Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A38684642459F2DA0051A20F /* Chip8Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A38684722459F2DD0051A20F /* Build configuration list for PBXNativeTarget "Chip8Mac" */;
+			buildPhases = (
+				A38684612459F2DA0051A20F /* Sources */,
+				A38684622459F2DA0051A20F /* Frameworks */,
+				A38684632459F2DA0051A20F /* Resources */,
+				A38684802459F8630051A20F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A386847A2459F8240051A20F /* PBXTargetDependency */,
+				A386847F2459F8630051A20F /* PBXTargetDependency */,
+			);
+			name = Chip8Mac;
+			productName = Chip8Mac;
+			productReference = A38684652459F2DA0051A20F /* Chip8Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A3D6BD362448D8EB00579B97 /* CHIP-8 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3D6BD4B2448D8EE00579B97 /* Build configuration list for PBXNativeTarget "CHIP-8" */;
@@ -439,6 +531,9 @@
 					A3832BE7244A312300FEDA28 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
+					A38684642459F2DA0051A20F = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					A3D6BD362448D8EB00579B97 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -460,6 +555,7 @@
 				A3D6BD362448D8EB00579B97 /* CHIP-8 */,
 				A3832BDF244A312300FEDA28 /* Chip8 */,
 				A3832BE7244A312300FEDA28 /* Chip8Tests */,
+				A38684642459F2DA0051A20F /* Chip8Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -469,6 +565,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38684882459FBBF0051A20F /* BC_test.ch8 in Resources */,
+				A38684852459FBB60051A20F /* PUZZLE in Resources */,
+				A38684862459FBB60051A20F /* TETRIS in Resources */,
+				A38684842459FBB60051A20F /* PONG in Resources */,
+				A38684832459FBB60051A20F /* MAZE in Resources */,
+				A38684822459FBB60051A20F /* CONNECT4 in Resources */,
+				A38684892459FBBF0051A20F /* test.c8 in Resources */,
+				A38684872459FBB60051A20F /* TICTACTOE in Resources */,
+				A38684812459FBB30051A20F /* BRIX in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,21 +584,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A38684632459F2DA0051A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A386846C2459F2DD0051A20F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3D6BD352448D8EB00579B97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3CC636B2448E34800F9F28A /* PUZZLE in Resources */,
-				A31A2A48244EBEBF00B0AC0F /* TETRIS in Resources */,
-				A3CC63692448E34800F9F28A /* CONNECT4 in Resources */,
-				A3CC63682448E34600F9F28A /* MAZE in Resources */,
-				A3CC636A2448E34800F9F28A /* PONG in Resources */,
-				A3CC636C2448E34800F9F28A /* TICTACTOE in Resources */,
-				A31A2A46244EBEB900B0AC0F /* BC_test.ch8 in Resources */,
 				A3D6BD472448D8EE00579B97 /* LaunchScreen.storyboard in Resources */,
-				A3CC63672448E34200F9F28A /* BRIX in Resources */,
 				A3D6BD442448D8EE00579B97 /* Assets.xcassets in Resources */,
-				A3832BDA244A1A0300FEDA28 /* test.c8 in Resources */,
 				A3D6BD422448D8EB00579B97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3832BFE244A312C00FEDA28 /* Chip8.swift in Sources */,
+				A386848A2459FCAD0051A20F /* ROM.swift in Sources */,
 				A3D92019244B635100913378 /* Randomizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +663,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A38684612459F2DA0051A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A386846A2459F2DA0051A20F /* ViewController.swift in Sources */,
+				A38684682459F2DA0051A20F /* AppDelegate.swift in Sources */,
+				A38684762459F47D0051A20F /* main.swift in Sources */,
+				A38684782459F7B80051A20F /* PixelView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3D6BD332448D8EB00579B97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,7 +681,6 @@
 				A3832C00244A316800FEDA28 /* ViewController.swift in Sources */,
 				A3D6BD3B2448D8EB00579B97 /* AppDelegate.swift in Sources */,
 				A3D6BD3D2448D8EB00579B97 /* SceneDelegate.swift in Sources */,
-				A3FB15C9244D65BF00203B07 /* Rom.swift in Sources */,
 				A3FB15C7244D65A000203B07 /* PixelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +702,16 @@
 			isa = PBXTargetDependency;
 			target = A3832BDF244A312300FEDA28 /* Chip8 */;
 			targetProxy = A3832BF3244A312300FEDA28 /* PBXContainerItemProxy */;
+		};
+		A386847A2459F8240051A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3832BDF244A312300FEDA28 /* Chip8 */;
+			targetProxy = A38684792459F8240051A20F /* PBXContainerItemProxy */;
+		};
+		A386847F2459F8630051A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3832BDF244A312300FEDA28 /* Chip8 */;
+			targetProxy = A386847E2459F8630051A20F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -628,7 +753,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.Chip8.lib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -654,7 +782,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.Chip8.lib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -695,6 +826,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A38684732459F2DD0051A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chip8Mac/Chip8Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Chip8Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.lukashromadnik.Chip8Mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A38684742459F2DD0051A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chip8Mac/Chip8Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Chip8Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.lukashromadnik.Chip8Mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -865,6 +1036,15 @@
 			buildConfigurations = (
 				A3832BFC244A312300FEDA28 /* Debug */,
 				A3832BFD244A312300FEDA28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A38684722459F2DD0051A20F /* Build configuration list for PBXNativeTarget "Chip8Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A38684732459F2DD0051A20F /* Debug */,
+				A38684742459F2DD0051A20F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

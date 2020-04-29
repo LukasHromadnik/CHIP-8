@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Rom: String {
+public enum ROM: String {
     case brix = "BRIX"
     case connect4 = "CONNECT4"
     case maze = "MAZE"

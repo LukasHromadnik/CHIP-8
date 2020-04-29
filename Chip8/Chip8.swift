@@ -130,7 +130,7 @@ public class Chip8 {
     }
 
     private func loadROM(_ name: String) {
-        guard let resourceURL = Bundle.main.url(forResource: name, withExtension: nil) else { assertionFailure("Unable to load resource: \(name)"); return }
+        guard let resourceURL = Bundle(for: Chip8.self).url(forResource: name, withExtension: nil) else { assertionFailure("Unable to load resource: \(name)"); return }
         let rom = try! Data(contentsOf: resourceURL)
 
         for i in 0..<rom.count {
