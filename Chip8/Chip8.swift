@@ -92,6 +92,9 @@ public class Chip8 {
     private let rom: String
     var shouldCheckRecursion = false
 
+    private var stepTimer: Timer?
+    private var timersTimer: Timer?
+
     public init(rom: String) {
         self.rom = rom
         setup()
@@ -100,7 +103,10 @@ public class Chip8 {
     public func run() {
         loadROM(rom)
 
-        Timer.scheduledTimer(withTimeInterval: 1.0 / 500, repeats: true) { [weak self] timer in
+        stepTimer?.invalidate()
+        timersTimer?.invalidate()
+
+        stepTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 500, repeats: true) { [weak self] timer in
             guard let self = self else { timer.invalidate(); return }
 
             self.makeStep()
@@ -110,11 +116,43 @@ public class Chip8 {
             }
         }
 
-        Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true) { [weak self] timer in
+        timersTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true) { [weak self] timer in
             guard let self = self else { timer.invalidate(); return }
 
             self.updateTimers()
         }
+    }
+
+    public func restart() {
+        for i in 0..<memory.count {
+            memory[i] = 0
+        }
+        for i in 0..<v.count {
+            v[i] = 0
+        }
+        for i in 0..<stack.count {
+            stack[i] = 0
+        }
+
+        pc = kInitProgramCounter
+        vI = 0
+        sp = 0
+        delayTimer = 0
+        soundTimer = 0
+        opcode = 0
+        keyboard = 0
+
+        shouldDraw = false
+        waitForKey = false
+
+        lastOpcode = nil
+
+        clearDisplay()
+        onDisplayUpdate?(display)
+
+        setup()
+
+        run()
     }
 
     public func press(_ key: Int) {
