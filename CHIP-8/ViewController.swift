@@ -129,13 +129,9 @@ class ViewController: UIViewController {
                 self?.pixelView.pixels[i].backgroundColor = display[i] > 0 ? .white : .black
             }
         }
-        keyboardView.onKeyDown = { [weak self] key in
-            self?.chip8.press(key)
-        }
+        keyboardView.onKeyDown = chip8.press
 
-        keyboardView.onKeyUp = { [weak self] key in
-            self?.chip8.release(key)
-        }
+        keyboardView.onKeyUp = chip8.release
     }
 
     override func viewDidAppear(_ animated: Bool) {
